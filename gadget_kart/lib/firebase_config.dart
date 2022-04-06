@@ -6,10 +6,10 @@ import 'package:flutter/foundation.dart';
 class DefaultFirebaseConfig {
   static FirebaseOptions get platformOptions {
     return const FirebaseOptions(
-        appId: '1:702206902475:android:847b51b3afb8116c04db4e',
-        apiKey: 'AIzaSyB9hgOye3Fehwys3ZAeu96Bd9To2Ky7gdg',
-        projectId: 'assignment5-8f751',
-        messagingSenderId: '702206902475',
+        appId: "1:197864353255:android:78be1c5385985df9faa142",
+        apiKey: "AIzaSyDOogcnhzxc1UQPH4r-_j_lI-UBjs75LaM",
+        projectId: "gadget-kart-b75f8",
+        messagingSenderId: '197864353255',
       );
    /* if (kIsWeb) {
       // Web

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "197864353255",
+    "project_id": "gadget-kart-b75f8",
+    "storage_bucket": "gadget-kart-b75f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197864353255:android:78be1c5385985df9faa142",
+        "android_client_info": {
+          "package_name": "com.example.gadget_kart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197864353255-pfn5tpbjq6cibbfmvcauspgberpq4e1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOogcnhzxc1UQPH4r-_j_lI-UBjs75LaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197864353255-pfn5tpbjq6cibbfmvcauspgberpq4e1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
