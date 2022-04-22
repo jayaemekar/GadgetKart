@@ -1,4 +1,3 @@
-import 'package:gadget_kart/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class HeadlineTitle extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:gadget_kart/blocs/models/product_model.dart';
-import 'package:gadget_kart/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 import 'product/product_item.dart';

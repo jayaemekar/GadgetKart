@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../../../generated/locale_keys.g.dart';
 class ContantUsScreen extends StatefulWidget {
   static const id = 'ContantUsScreen';
   const ContantUsScreen({Key? key}) : super(key: key);

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../../generated/locale_keys.g.dart';
 import './add_product.dart';
 import './address_screen.dart';
 import './favorite_screen.dart';
