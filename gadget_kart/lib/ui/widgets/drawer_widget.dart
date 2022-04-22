@@ -1,12 +1,8 @@
 import 'package:gadget_kart/ui/screens/auth/login_screen.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
-
 import '../../services/firebase/auth_service.dart';
-import '../../generated/locale_keys.g.dart';
 import '../screens/drawer/contant_us_screen.dart';
 import '../../data/local/local_data.dart';
 
@@ -28,10 +24,10 @@ class DrawerWidget extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Flexible(
+                const Flexible(
                     child: Text(
-                  LocaleKeys.title.tr(),
-                  style: const TextStyle(
+                  "Gadget Kart",
+                  style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
                       fontStyle: FontStyle.italic),
@@ -42,7 +38,7 @@ class DrawerWidget extends StatelessWidget {
           height: 30,
         ),
         _listTiles(
-            label: LocaleKeys.contantUs.tr(),
+            label: "Contant US",
             function: () {
               _navigateToTaskScreen(context);
             },
@@ -51,35 +47,11 @@ class DrawerWidget extends StatelessWidget {
           thickness: 1,
         ),
         _listTiles(
-            label: LocaleKeys.logoutPage.tr(),
+            label: "Logout",
             function: () {
               _logout(context);
             },
             icon: Icons.logout_outlined),
-        const Divider(
-          thickness: 1,
-        ),
-        _listTiles(
-          function: () {},
-          icon: Icons.language,
-          label: LocaleKeys.language.tr(),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              LanguageButton(
-                locale: context.locale.languageCode,
-                value: 'ar',
-              ),
-              const SizedBox(width: 30),
-              LanguageButton(
-                locale: context.locale.languageCode,
-                value: 'en',
-              ),
-            ],
-          ),
-        ),
         const Divider(
           thickness: 1,
         ),
@@ -114,7 +86,7 @@ class DrawerWidget extends StatelessWidget {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Row(
+           /* title: Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -124,25 +96,25 @@ class DrawerWidget extends StatelessWidget {
                     width: 20,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
-                    LocaleKeys.signup.tr(),
+                    "Sign Up",
                   ),
                 ),
               ],
-            ),
-            content: Text(
-              LocaleKeys.doYou.tr(),
-              style: const TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+            ), */
+            content: const Text(
+              "Do you wanna Sign out?",
+              style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
             ),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.canPop(context) ? Navigator.pop(context) : null;
                 },
-                child: Text(
-                  LocaleKeys.cancel.tr(),
+                child: const Text(
+                  "Cancel",
                 ),
               ),
               TextButton(
@@ -150,9 +122,9 @@ class DrawerWidget extends StatelessWidget {
                     await AuthService.signOut(context);
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
-                  child: Text(
-                    LocaleKeys.yes.tr(),
-                    style: const TextStyle(color: Colors.red),
+                  child: const Text(
+                    "Yes",
+                    style: TextStyle(color: Colors.red),
                   ))
             ],
           );
@@ -174,38 +146,6 @@ class DrawerWidget extends StatelessWidget {
       title: Text(
         label,
         style: const TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
-      ),
-    );
-  }
-}
-
-class LanguageButton extends StatelessWidget {
-  const LanguageButton({
-    Key? key,
-    required this.locale,
-    required this.value,
-  }) : super(key: key);
-  final String locale;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(30),
-      child: SizedBox(
-        height: 40,
-        child: MaterialButton(
-          color: Colors.white,
-          onPressed: () {
-            context.setLocale(Locale(value));
-          },
-          child: Text(
-            tr(value),
-            style: TextStyle(
-              color: locale == value ? Colors.red : Colors.black,
-            ),
-          ),
-        ),
       ),
     );
   }

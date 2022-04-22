@@ -1,8 +1,5 @@
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../../generated/locale_keys.g.dart';
 
 class ButtonToVerifyThatYouHaveAnAccount extends StatelessWidget {
   final Widget pageName;
@@ -25,7 +22,7 @@ class ButtonToVerifyThatYouHaveAnAccount extends StatelessWidget {
             ),
             const TextSpan(text: ' '),
             TextSpan(
-              text: LocaleKeys.checkHere.tr(),
+              text: "Check here",
               style: Theme.of(context).textTheme.headline2,
               recognizer: TapGestureRecognizer()
                 ..onTap = () => Navigator.pushReplacement(
