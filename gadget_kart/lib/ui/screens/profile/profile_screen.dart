@@ -1,4 +1,3 @@
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/locale_keys.g.dart';
@@ -21,8 +20,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          LocaleKeys.welcome.tr(),
+        title: const Text(
+          "WelCome",
         ),
         centerTitle: true,
       ),
@@ -30,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           CardPageItem(
             icon: Icons.location_on,
-            title: LocaleKeys.addressPage.tr(),
+            title: "Address",
             color: Colors.red,
             onPressed: () {
               Navigator.pushNamed(context, AddressScreen.id);
@@ -38,7 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           CardPageItem(
             icon: Icons.manage_accounts,
-            title: LocaleKeys.editProfile.tr(),
+            title: "Edit Profile",
             color: Colors.black,
             onPressed: () {
               Navigator.pushNamed(context, UserInfo.id);
@@ -46,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           CardPageItem(
             icon: Icons.favorite,
-            title: LocaleKeys.favoritePage.tr(),
+            title: "Favorite",
             color: Colors.purple,
             onPressed: () {
               Navigator.pushNamed(context, FavoriteScreen.id);
@@ -54,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
            CardPageItem(
              icon: Icons.upload,
-             title: LocaleKeys.uploadProduct.tr(),
+             title: "Upload Product",
              color: Colors.blue,
              onPressed: () {
                Navigator.pushNamed(context, UploadProductForm.id);

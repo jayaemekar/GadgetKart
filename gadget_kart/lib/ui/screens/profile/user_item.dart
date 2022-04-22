@@ -1,5 +1,3 @@
-import 'package:gadget_kart/generated/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../blocs/models/user_model.dart';
@@ -26,7 +24,7 @@ class UserItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              LocaleKeys.userName.tr() + '  :  ' + userModel.userName,
+              "User Name" '  :  ' + userModel.userName,
               style: const TextStyle(
                 fontSize: 20,
                 color: Colors.teal
@@ -60,21 +58,21 @@ class UserItem extends StatelessWidget {
                     side: BorderSide.none),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children:  [
+                  children:  const [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      padding: EdgeInsets.symmetric(vertical: 14),
                       child: Text(
-                        LocaleKeys.edit.tr(),
-                        style: const TextStyle(
+                        "Edit ",
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 10,
                     ),
-                    const Icon(
+                    Icon(
                       Icons.edit,
                       color: Colors.white,
                     )
