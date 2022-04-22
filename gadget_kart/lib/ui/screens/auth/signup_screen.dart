@@ -90,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     TextFormField(
                       style: kTextFormStyle,
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.name,
                       textInputAction: TextInputAction.next,
                       obscureText: _obscureText,
                       decoration: textFormDecorationPassword(),

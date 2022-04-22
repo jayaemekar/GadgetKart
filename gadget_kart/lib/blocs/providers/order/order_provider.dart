@@ -37,10 +37,7 @@ class OrderProvider extends StateNotifier<OrderState> {
           ? 'orderBy="id"&equalTo="$userId"'
           : 'orderBy="id"&equalTo="$userId"';
       
-      final data = await DioClient()
-          .send(reqMethod: 'get', path: 'orders.json?$filterString');
-    //  final data = await DioClient()
-    //      .send(reqMethod: 'get', path: 'orders.json?');
+      final data = await DioClient().send(reqMethod: 'get', path: 'orders.json?$filterString');
       final List<OrderModel> loadedOrders = [];
       final extractedData = data.data;
       final List<OrderModel> orders;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ForgetPassword extends StatefulWidget {
-   static const id = 'ForgetPassword';
+  static const id = 'ForgetPassword';
   const ForgetPassword({Key? key}) : super(key: key);
 
   @override
@@ -46,7 +46,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       Navigator.of(context).pop();
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content:
-                            Text('Has been sent Reset your password for emai'),
+                            Text('Has been sent Reset your password for email'),
                       ));
                     } on FirebaseAuthException catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -55,7 +55,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       log(e.toString());
                     }
                   },
-                  color: const Color(0xff3FC1C0),
+                  color: Color.fromARGB(255, 73, 112, 241),
                 ),
               ],
             ),
