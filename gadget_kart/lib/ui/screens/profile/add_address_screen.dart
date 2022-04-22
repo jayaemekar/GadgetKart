@@ -1,8 +1,8 @@
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../widgets/space_widget.dart';
-import '../../../generated/locale_keys.g.dart';
+
 import '../../../services/firebase/firestore_service.dart';
 
 class AddAddressScreen extends StatefulWidget {
@@ -37,8 +37,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          LocaleKeys.addAddress.tr(),
+        title: const Text(
+          "Add Address",
         ),
       ),
       body: Container(

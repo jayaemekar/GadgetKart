@@ -1,13 +1,11 @@
 import 'dart:math';
 
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../blocs/providers/order/order_provider.dart';
 import '../../../blocs/providers/order/order_state.dart';
-import '../../../generated/locale_keys.g.dart';
 import '../../../blocs/models/orders_model.dart';
 import '../../widgets/drawer_widget.dart';
 
@@ -21,8 +19,8 @@ class OrderScreen extends StatelessWidget {
     return Scaffold(
         drawer: const DrawerWidget(),
         appBar: AppBar(
-          title: Text(
-            LocaleKeys.yourOrder.tr(),
+          title: const Text(
+            "Your Order",
           ),
         ),
         body: Consumer(

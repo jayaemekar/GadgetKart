@@ -1,5 +1,3 @@
-import 'package:gadget_kart/generated/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import './brands/brands_scroll_horizontal.dart';
@@ -31,7 +29,7 @@ class HomeScreen extends StatelessWidget {
 
           // Categories
           HeadlineTitle(
-            title: LocaleKeys.categories.tr(),
+            title: "Categories",
             context: context,
             screen: const CategoriesScrollVertical(),
           ),
@@ -42,7 +40,7 @@ class HomeScreen extends StatelessWidget {
 
           // Brands
           HeadlineTitle(
-            title: LocaleKeys.brands.tr(),
+            title: "Brands",
             context: context,
             screen: const BrandsScrollVertical(),
           ),

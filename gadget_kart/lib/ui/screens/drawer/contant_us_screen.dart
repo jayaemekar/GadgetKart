@@ -1,4 +1,4 @@
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,8 +17,8 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          LocaleKeys.contantUs.tr(),
+        title: const Text(
+          "Contant US",
         ),
       ),
       body: Padding(
@@ -33,11 +33,11 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Flexible(
+                const Flexible(
                   flex: 3,
                   child: Text(
-                    LocaleKeys.welcome.tr(),
-                    style: const TextStyle(
+                    "Welcome",
+                    style: TextStyle(
                         fontSize: 30,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
@@ -86,7 +86,7 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
   }
 
   void _openWhatsAppChat() async {
-    var whatsappUrl = 'https://www.linkedin.com/in/mohamed-ayad1998/';
+    var whatsappUrl = 'https://www.linkedin.com/in/jayaaemekar24/';
     if (await canLaunch(whatsappUrl)) {
       await launch(whatsappUrl);
     } else {
@@ -95,7 +95,7 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
   }
 
   void _mailTo() async {
-    var url = 'mailto:mohamedabdo333334@gmail.com';
+    var url = 'mailto:jayaa.emekar19@gmail.com';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -104,7 +104,7 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
   }
 
   void _callPhoneNumber() async {
-    var phoneUrl = 'tel://01282903069';
+    var phoneUrl = 'tel://7206094620';
     if (await canLaunch(phoneUrl)) {
       launch(phoneUrl);
     } else {
@@ -113,7 +113,7 @@ class _ContantUsScreenState extends State<ContantUsScreen> {
   }
 
   void _facebook() async {
-    var phoneUrl = 'https://www.facebook.com/mohamed.abdo1998/';
+    var phoneUrl = 'https://www.facebook.com/jaya.emekar/';
     if (await canLaunch(phoneUrl)) {
       launch(phoneUrl);
     } else {

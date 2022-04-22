@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:gadget_kart/blocs/models/product_model.dart';
 import 'package:gadget_kart/generated/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import 'product/product_item.dart';
@@ -54,8 +53,8 @@ class _SearchScreenState extends State<SearchScreen> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasError) {
-            return  Center(
-              child: Text(LocaleKeys.problem.tr(),),
+            return  const Center(
+              child: Text("There is a problem",),
             );
           } else if (snapshot.hasData) {
             return ListView.builder(
@@ -67,8 +66,8 @@ class _SearchScreenState extends State<SearchScreen> {
               },
             );
           }
-          return  Center(
-            child: Text(LocaleKeys.noData.tr(),),
+          return  const Center(
+            child: Text("There are no data",),
           );
         },
       ),

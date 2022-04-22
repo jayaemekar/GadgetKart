@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:gadget_kart/generated/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 import '../../../blocs/models/user_model.dart';
@@ -16,7 +14,7 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(LocaleKeys.infoUser.tr(),),
+        title:  const Text("User Information",),
         centerTitle: true,
      
       ),

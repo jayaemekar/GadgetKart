@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../profile/address_widget.dart';
 import './add_address_screen.dart';
-import '../../../generated/locale_keys.g.dart';
 
 class AddressScreen extends StatefulWidget {
            static const id = 'AddressScreen';
@@ -25,9 +23,9 @@ class _AddressScreenState extends State<AddressScreen> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: Text(
-          LocaleKeys.addressPage.tr(),
-          style: const TextStyle(color: Colors.pink),
+        title: const Text(
+          "Address",
+          style: TextStyle(color: Colors.pink),
         ),
       ),
       body: StreamBuilder<QuerySnapshot>(

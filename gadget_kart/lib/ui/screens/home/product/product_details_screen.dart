@@ -1,4 +1,4 @@
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../blocs/models/product_model.dart';
 import '../../../../blocs/providers/cart/cart_provider.dart';
 import '../../../../blocs/providers/cart/cart_state.dart';
-import '../../../../generated/locale_keys.g.dart';
 import '../../../../themes/colors.dart';
 import '../../../widgets/appbar_widget.dart';
 
@@ -40,7 +39,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   return MaterialButton(
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     shape: const RoundedRectangleBorder(side: BorderSide.none),
-                    color: Color.fromARGB(255, 38, 4, 133),
+                    color: const Color.fromARGB(255, 38, 4, 133),
                     onPressed: () {
                       ref.watch(cartItemProvider.notifier).addItem(
                             widget.product.id,
@@ -49,9 +48,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             state.cartItems,
                           );
                     },
-                    child: Text(
-                      LocaleKeys.addToCart.tr(),
-                      style: const TextStyle(fontSize: 16, color: Colors.white),
+                    child: const Text(
+                      "Add To Cart",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   );
                 }

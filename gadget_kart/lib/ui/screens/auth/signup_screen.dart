@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-import '../../../generated/locale_keys.g.dart';
 import '../../../themes/text_styles.dart';
 import '../../widgets/button_auth_widget.dart';
 import '../../widgets/button_chick_here_widget.dart';
@@ -64,9 +61,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: kTextFormStyle,
                       keyboardType: TextInputType.name,
                       textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.perm_identity),
-                        hintText: LocaleKeys.userName.tr(),
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.perm_identity),
+                        hintText: "User Name",
                       ),
                       controller: _nameController,
                       validator: ValidarorsAuth.nameValidator,
@@ -78,9 +75,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: kTextFormStyle,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.email),
-                        hintText: LocaleKeys.email.tr(),
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.email),
+                        hintText: "Email",
                       ),
                       controller: _emailController,
                       validator: ValidarorsAuth.emailValidator,
@@ -100,9 +97,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                     ButtonToVerifyThatYouHaveAnAccount(
-                      pageName: const LoginScreen(),
-                      title: LocaleKeys.youHave.tr(),
+                     const ButtonToVerifyThatYouHaveAnAccount(
+                      pageName: LoginScreen(),
+                      title: "if you have account ?",
                     ),
                     const SizedBox(
                       height: 10,
@@ -113,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           )
                         // * Create a new account and save user data
                         : AuthButton(
-                            title: LocaleKeys.signup.tr(),
+                            title: "Sign Up",
                             iconData: Icons.person_add,
                             onPressed: () async {
                               if (_formKey.currentState!.validate()) {
@@ -164,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
       prefixIcon: const Icon(Icons.lock),
-      hintText: LocaleKeys.password.tr(),
+      hintText: "Password",
     );
   }
 }

@@ -1,7 +1,4 @@
-import 'package:gadget_kart/generated/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
-
 import '../../widgets/space_widget.dart';
 import '../../../blocs/models/user_model.dart';
 import '../../../services/firebase/firestore_service.dart';
@@ -43,7 +40,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(LocaleKeys.editProfile.tr()),
+        title:  const Text("Edit Profile"),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
@@ -55,7 +52,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SpaceAndTitleWidget(
-                  title: LocaleKeys.userName.tr(),
+                  title: "Username",
                 ),
                 TextFormField(
                   controller: myNameController,

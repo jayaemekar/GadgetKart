@@ -1,4 +1,4 @@
-import 'package:easy_localization/src/public_ext.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,6 @@ import '../../../blocs/providers/cart/cart_provider.dart';
 import '../../../blocs/providers/cart/cart_state.dart';
 import '../../../blocs/providers/order/order_provider.dart';
 import '../../../blocs/providers/order/order_state.dart';
-import '../../../generated/locale_keys.g.dart';
 import './cart_item.dart';
 
 class CartScreen extends StatelessWidget {
@@ -18,8 +17,8 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          LocaleKeys.cartPage.tr(),
+        title: const Text(
+          "Orders",
         ),
       ),
       body: Consumer(
@@ -120,9 +119,9 @@ class _OrderButtonState extends State<OrderButton> {
           return MaterialButton(
             child: _isLoading
                 ? const CircularProgressIndicator()
-                : Text(
-                    LocaleKeys.orderNow.tr(),
-                    style: const TextStyle(color: Colors.black)
+                : const Text(
+                    "Order Now",
+                    style: TextStyle(color: Colors.black)
                   ),
             onPressed:
                 (cartPro.totalAmount(stateCart.cartItems) <= 0 || _isLoading)
