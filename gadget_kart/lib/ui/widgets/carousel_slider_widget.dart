@@ -22,7 +22,10 @@ class CarouselSliderWidget extends StatelessWidget {
         boxFit: BoxFit.fill,
         images: [
           Image.asset('assets/images/carousel4.png'),
-          Image.asset('assets/images/carousel4.png'),
+          Image.asset('assets/images/electronics_banner.jpg'),
+          Image.asset('assets/images/banner1.jpeg'),        
+          Image.asset('assets/images/banner2.jpeg'),
+          
         ],
       ),
     );

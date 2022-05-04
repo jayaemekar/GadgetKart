@@ -106,47 +106,21 @@ flutter:
     - assets/images/category/tablet.png
     - assets/images/category/watches.png
     - assets/images/category/wifi.png
-    - assets/images/apple-pay.png
-    - assets/images/arts_banner.jpg
-    - assets/images/books_banner.jpg
+    - assets/images/payment/001-apple-pay.png
+    - assets/images/payment/002-visa.png
+    - assets/images/payment/003-paypal.png
+    - assets/images/payment/004-american-express.png
+    - assets/images/001-apple-pay.png
+    - assets/images/002-visa.png
+    - assets/images/003-paypal.png
+    - assets/images/004-american-express.png
+    - assets/images/banner1.jpeg
+    - assets/images/banner2.jpeg
     - assets/images/carousel4.png
-    - assets/images/developer.jpeg
     - assets/images/electronics_banner.jpg
-    - assets/images/fashions_banner.jpg
-    - assets/images/fedex-express.png
-    - assets/images/glap.png
-    - assets/images/google-pay.png
-    - assets/images/groceries_banner.jpg
     - assets/images/Image Banner 2.png
-    - assets/images/Image Banner 3.png
-    - assets/images/Image Popular Product 1.png
-    - assets/images/Image Popular Product 2.png
-    - assets/images/Image Popular Product 3.png
-    - assets/images/launcher_icon_trans.png
-    - assets/images/launcher_icon_with_bg.png
     - assets/images/logo.png
-    - assets/images/mastercard-2.png
-    - assets/images/others_banner.jpg
-    - assets/images/Pattern Success.png
-    - assets/images/paypal.png
-    - assets/images/product 1 image.png
-    - assets/images/Profile Image.png
-    - assets/images/ps4_console_blue_1.png
-    - assets/images/ps4_console_blue_2.png
-    - assets/images/ps4_console_blue_3.png
-    - assets/images/ps4_console_blue_4.png
-    - assets/images/ps4_console_white_1.png
-    - assets/images/ps4_console_white_2.png
-    - assets/images/ps4_console_white_3.png
-    - assets/images/ps4_console_white_4.png
-    - assets/images/shoes2.png
-    - assets/images/splash_1.png
-    - assets/images/splash_2.png
-    - assets/images/splash_3.png
-    - assets/images/success.png
-    - assets/images/tshirt.png
-    - assets/images/visa.png
-    - assets/images/wireless headset.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

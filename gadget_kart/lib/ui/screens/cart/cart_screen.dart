@@ -1,7 +1,7 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-
+import '../checkout/checkout.dart';
 import '../../../blocs/models/cart_model.dart';
 import '../../../blocs/providers/cart/cart_provider.dart';
 import '../../../blocs/providers/cart/cart_state.dart';
@@ -139,7 +139,14 @@ class _OrderButtonState extends State<OrderButton> {
                         setState(() {
                           _isLoading = false;
                         });
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (context) => Checkout(),
+                      ),
+                        );
                       },
+
             textColor: Theme.of(context).primaryColor,
           );
         }
