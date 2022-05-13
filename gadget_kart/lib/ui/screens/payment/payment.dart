@@ -2,7 +2,6 @@ import 'package:gadget_kart/commons/text_style.dart';
 import '../payment/order_confirm_page.dart';
 import '../../widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class _PaymentState extends State<Payment> {
       ),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -67,21 +66,21 @@ class _PaymentState extends State<Payment> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Text(
                 "Step 2",
                 style: subtitleText().copyWith(color: Colors.grey[500]),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 "Payment",
                 style: headingText(),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               SingleChildScrollView(
@@ -90,25 +89,25 @@ class _PaymentState extends State<Payment> {
                   children: [
                     card(
                       context,
-                      Color(0xff1981D1),
-                      Color(0xff0A53C1),
+                      const Color(0xff1981D1),
+                      const Color(0xff0A53C1),
                       'assets/images/002-visa.png',
                       '01238039084230',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
                     card(
                       context,
-                      Color(0xff480910),
-                      Color(0xff722830),
+                      const Color(0xff480910),
+                      const Color(0xff722830),
                       'assets/images/004-american-express.png',
                       '2434536545656',
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -137,7 +136,7 @@ class _PaymentState extends State<Payment> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               OutlineButton(
@@ -152,12 +151,12 @@ class _PaymentState extends State<Payment> {
                 child: Container(
                   width: double.infinity,
                   height: 50,
-                  child: Image(
+                  child: const Image(
                     image: AssetImage("assets/images/003-paypal.png"),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               OutlineButton(
@@ -172,12 +171,12 @@ class _PaymentState extends State<Payment> {
                 child: Container(
                   width: double.infinity,
                   height: 50,
-                  child: Image(
+                  child: const Image(
                     image: AssetImage("assets/images/001-apple-pay.png"),
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               MaterialButton(
                 height: 50,
                 minWidth: MediaQuery.of(context).size.width,
@@ -193,7 +192,7 @@ class _PaymentState extends State<Payment> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OrderConfirmPage(),
+                      builder: (context) => const OrderConfirmPage(),
                     ),
                   );
                 },

@@ -2,8 +2,8 @@ import 'package:gadget_kart/commons/text_style.dart';
 import '../home/home_screen.dart';
 import '../../widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../tap_screen.dart';
+
 class OrderConfirmPage extends StatelessWidget {
   const OrderConfirmPage({Key? key}) : super(key: key);
 
@@ -15,12 +15,12 @@ class OrderConfirmPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Checkout",
-         // style: bodyText(),
+          // style: bodyText(),
         ),
       ),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -63,7 +63,7 @@ class OrderConfirmPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Center(
@@ -75,14 +75,14 @@ class OrderConfirmPage extends StatelessWidget {
                       color: _theme.primary,
                       size: 130,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
                       "Order Confirmed!",
                       style: headingText(),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -93,7 +93,7 @@ class OrderConfirmPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               MaterialButton(
                 height: 50,
                 minWidth: MediaQuery.of(context).size.width,
@@ -106,15 +106,8 @@ class OrderConfirmPage extends StatelessWidget {
                 ),
                 color: _theme.primary,
                 onPressed: () {
-                   Navigator.pushNamed(context, HomeScreen.id);
-                   Navigator.pushReplacementNamed(
-                                      context, TapScreen.id);
-                /*  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    ),
-                  ); */
+                  Navigator.pushNamed(context, HomeScreen.id);
+                  Navigator.pushReplacementNamed(context, TapScreen.id);
                 },
               ),
             ],

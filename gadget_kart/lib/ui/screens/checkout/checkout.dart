@@ -2,7 +2,6 @@ import 'package:gadget_kart/commons/text_style.dart';
 import '../payment/payment.dart';
 import '../../widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Checkout extends StatefulWidget {
   const Checkout({Key? key}) : super(key: key);
@@ -16,20 +15,15 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     var _theme = Theme.of(context).colorScheme;
     return Scaffold(
-      //extendBodyBehindAppBar: true,
       drawer: const DrawerWidget(),
       appBar: AppBar(
-       // systemOverlayStyle: SystemUiOverlayStyle.dark,
-        //elevation: 0,
-       // backgroundColor: Colors.transparent,
         title: const Text(
           "Checkout",
-          //style: bodyText(),
         ),
       ),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -72,51 +66,51 @@ class _CheckoutState extends State<Checkout> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Text(
                 "Step 1",
                 style: subtitleText().copyWith(color: Colors.grey[500]),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 "Shipping",
                 style: headingText(),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               TextFormField(
                 decoration: InputDecoration(
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   hintText: "Full Name",
                   labelText: "Full Name",
-                  prefixIcon: Icon(Icons.person_outline_rounded),
+                  prefixIcon: const Icon(Icons.person_outline_rounded),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               TextFormField(
                 decoration: InputDecoration(
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   hintText: "Street address",
                   labelText: "Street address",
-                  prefixIcon: Icon(Icons.map_outlined),
+                  prefixIcon: const Icon(Icons.map_outlined),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -124,8 +118,8 @@ class _CheckoutState extends State<Checkout> {
                   Expanded(
                     child: TextFormField(
                       decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 25, vertical: 20),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -134,14 +128,14 @@ class _CheckoutState extends State<Checkout> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   Expanded(
                     child: TextFormField(
                       decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 25, vertical: 20),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -152,22 +146,22 @@ class _CheckoutState extends State<Checkout> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               TextFormField(
                 decoration: InputDecoration(
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   hintText: "Country",
                   labelText: "Country",
-                  prefixIcon: Icon(Icons.location_on_outlined),
+                  prefixIcon: const Icon(Icons.location_on_outlined),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               MaterialButton(
                 height: 50,
                 minWidth: MediaQuery.of(context).size.width,
@@ -183,7 +177,7 @@ class _CheckoutState extends State<Checkout> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Payment(),
+                      builder: (context) => const Payment(),
                     ),
                   );
                 },
