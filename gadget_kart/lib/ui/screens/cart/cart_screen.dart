@@ -1,13 +1,13 @@
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:gadget_kart/commons/text_style.dart';
 import '../checkout/checkout.dart';
+import './cart_item.dart';
 import '../../../blocs/models/cart_model.dart';
 import '../../../blocs/providers/cart/cart_provider.dart';
 import '../../../blocs/providers/cart/cart_state.dart';
 import '../../../blocs/providers/order/order_provider.dart';
 import '../../../blocs/providers/order/order_state.dart';
-import './cart_item.dart';
 
 class CartScreen extends StatelessWidget {
   static const id = 'CartScreen';
@@ -119,9 +119,10 @@ class _OrderButtonState extends State<OrderButton> {
           return MaterialButton(
             child: _isLoading
                 ? const CircularProgressIndicator()
-                : const Text(
+                : Text(
                     "Order Now",
-                    style: TextStyle(color: Colors.black)
+                    style: buttonText(),
+                    //style: TextStyle(color: Colors.black)
                   ),
             onPressed:
                 (cartPro.totalAmount(stateCart.cartItems) <= 0 || _isLoading)
@@ -140,13 +141,12 @@ class _OrderButtonState extends State<OrderButton> {
                           _isLoading = false;
                         });
                         Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        builder: (context) => Checkout(),
-                      ),
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Checkout(),
+                          ),
                         );
                       },
-
             textColor: Theme.of(context).primaryColor,
           );
         }
