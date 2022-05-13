@@ -1,3 +1,4 @@
+//This class is used to define the brand Models
 class BrandModel {
   final String title;
   final String image;
