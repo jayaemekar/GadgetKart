@@ -1,5 +1,6 @@
 import 'package:gadget_kart/commons/text_style.dart';
 import '../payment/payment.dart';
+import '../../widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,14 +16,15 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     var _theme = Theme.of(context).colorScheme;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      //extendBodyBehindAppBar: true,
+      drawer: const DrawerWidget(),
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Text(
+       // systemOverlayStyle: SystemUiOverlayStyle.dark,
+        //elevation: 0,
+       // backgroundColor: Colors.transparent,
+        title: const Text(
           "Checkout",
-          style: bodyText(),
+          //style: bodyText(),
         ),
       ),
       body: SafeArea(

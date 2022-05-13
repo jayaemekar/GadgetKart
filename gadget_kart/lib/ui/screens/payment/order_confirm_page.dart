@@ -1,6 +1,6 @@
 import 'package:gadget_kart/commons/text_style.dart';
 import '../home/home_screen.dart';
-//import 'package:gadget_kart/main_screen/main_screen.dart';
+import '../../widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../tap_screen.dart';
@@ -11,12 +11,9 @@ class OrderConfirmPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var _theme = Theme.of(context).colorScheme;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      drawer: const DrawerWidget(),
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Text(
+        title: const Text(
           "Checkout",
          // style: bodyText(),
         ),
