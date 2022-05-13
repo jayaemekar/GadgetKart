@@ -8,7 +8,6 @@ class DioClient {
     _dio.options.baseUrl = _url;
     _dio.options.validateStatus = (_) => true;
   }
-
   Future<Response> send({
     required String reqMethod,
     required String path,
@@ -56,5 +55,3 @@ class DioClient {
     }
   }
 }
-
-

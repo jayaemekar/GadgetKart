@@ -43,5 +43,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   ProfileScreen.id: (ctx) => const ProfileScreen(),
   UserInfo.id: (ctx) => const UserInfo(),
   TapScreen.id: (ctx) => const TapScreen(),
-  UserState.id:(ctx)=>const UserState(),
+  UserState.id: (ctx) => const UserState(),
 };
