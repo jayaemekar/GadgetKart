@@ -10,7 +10,7 @@ import '../../../blocs/models/orders_model.dart';
 import '../../widgets/drawer_widget.dart';
 
 class OrderScreen extends StatelessWidget {
-    static const id = 'OrderScreen';
+  static const id = 'OrderScreen';
 
   const OrderScreen({Key? key}) : super(key: key);
 
@@ -71,6 +71,7 @@ class OrdersItem extends StatefulWidget {
 
 class _OrdersItemState extends State<OrdersItem> {
   var _expanded = false;
+  var code = Random().nextInt(900000) + 100000;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -78,7 +79,7 @@ class _OrdersItemState extends State<OrdersItem> {
       child: Column(
         children: [
           ListTile(
-            title: Text('\$${widget.order.amount.toStringAsFixed(2)}'),
+            title: Text('Order Id-\$$code'),
             subtitle: Text(
               DateFormat('dd -MM -yyyy / hh:mm ').format(widget.order.dateTime),
             ),
