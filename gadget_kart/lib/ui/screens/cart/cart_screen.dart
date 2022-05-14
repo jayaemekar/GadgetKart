@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:gadget_kart/commons/text_style.dart';
 import '../checkout/checkout.dart';
 import './cart_item.dart';
 import '../../../blocs/models/cart_model.dart';
@@ -18,7 +17,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Orders",
+          "Cart Items",
         ),
       ),
       body: Consumer(
@@ -52,52 +51,6 @@ Widget buildLoading() {
   );
 }
 
-Widget buildColumnWithData(List<CartModel> cartModel) {
-  return SingleChildScrollView(
-    child: Column(
-      children: [
-        Card(
-          margin: const EdgeInsets.all(15),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                const Text(
-                  'Total',
-                  style: TextStyle(fontSize: 20),
-                ),
-                const Spacer(),
-                Chip(
-                  backgroundColor: Colors.amber,
-                  label: Consumer(
-                    builder: (context, ref, child) => Text(
-                      ref
-                          .read(cartItemProvider.notifier)
-                          .totalAmount(cartModel)
-                          .toString(),
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                const Expanded(child: OrderButton()),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(height: 10),
-        ListView(
-          shrinkWrap: true,
-          children: [
-            CartItem(
-              cartModel: cartModel,
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
-}
-
 class OrderButton extends StatefulWidget {
   const OrderButton({Key? key}) : super(key: key);
 
@@ -119,11 +72,8 @@ class _OrderButtonState extends State<OrderButton> {
           return MaterialButton(
             child: _isLoading
                 ? const CircularProgressIndicator()
-                : Text(
-                    "Order Now",
-                    style: buttonText(),
-                    //style: TextStyle(color: Colors.black)
-                  ),
+                : const Text("Order Now",
+                    style: TextStyle(color: Colors.black)),
             onPressed:
                 (cartPro.totalAmount(stateCart.cartItems) <= 0 || _isLoading)
                     ? null
@@ -154,4 +104,52 @@ class _OrderButtonState extends State<OrderButton> {
       return const Center(child: Text('Loading...'));
     });
   }
+}
+
+Widget buildColumnWithData(List<CartModel> cartModel) {
+  return SingleChildScrollView(
+    child: Column(
+      children: [
+        const SizedBox(height: 10),
+        ListView(
+          shrinkWrap: true,
+          children: [
+            CartItem(
+              cartModel: cartModel,
+            ),
+          ],
+        ),
+        Card(
+          margin: const EdgeInsets.all(15),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              children: [
+                const Text(
+                  'Total Amount',
+                  style: TextStyle(fontSize: 20),
+                ),
+                const Spacer(),
+                Chip(
+                  backgroundColor: Colors.amber,
+                  label: Consumer(
+                    builder: (context, ref, child) => Text(
+                      ref
+                          .read(cartItemProvider.notifier)
+                          .totalAmount(cartModel)
+                          .toStringAsFixed(2)
+                          .toString(),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 247, 239, 239)),
+                    ),
+                  ),
+                ),
+                const Expanded(child: OrderButton()),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

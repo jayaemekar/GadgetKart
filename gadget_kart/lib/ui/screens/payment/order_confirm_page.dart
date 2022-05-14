@@ -15,14 +15,12 @@ class OrderConfirmPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Checkout",
-          // style: bodyText(),
         ),
       ),
       body: SafeArea(
         child: Container(
           margin: const EdgeInsets.all(20),
           child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
