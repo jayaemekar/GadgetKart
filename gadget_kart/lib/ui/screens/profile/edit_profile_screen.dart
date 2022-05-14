@@ -16,14 +16,12 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
- 
   final myNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
 
   @override
   void initState() {
-    
     myNameController.text = widget.userModel.userName;
     super.initState();
   }
@@ -40,7 +38,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  const Text("Edit Profile"),
+        title: const Text("Edit Profile"),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
@@ -62,7 +60,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     }
                   },
                   decoration: const InputDecoration(
-                    hintText: 'ex : Mohamed-Ayad',
+                    hintText: 'ex : Jayaa-Emekar',
                   ),
                 ),
               ],
@@ -74,8 +72,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ? const CircularProgressIndicator()
           : FloatingActionButton(
               onPressed: () async {
-                if (
-                    myNameController.text == "") {
+                if (myNameController.text == "") {
                   Utils.customMessage(
                       context, "All fields are required!", Colors.redAccent);
                 } else {
@@ -83,7 +80,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     loading = true;
                   });
                   await FirestoreService.updatetUser(
-                   
                     userName: myNameController.text,
                     docId: widget.docsid,
                   );
