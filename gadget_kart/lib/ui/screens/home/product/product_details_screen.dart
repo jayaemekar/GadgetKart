@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +19,7 @@ class ProductDetailsScreen extends StatefulWidget {
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
-  
+  bool pressAttention = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -66,13 +65,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               child: IconButton(
                 onPressed: () async {
                   var sharedPref = await SharedPreferences.getInstance();
-
                   await sharedPref.setString('idPrefer', widget.product.id);
+                  setState(() {
+                    pressAttention = !pressAttention;
+                  });
                 },
-                icon: const Icon(
-                     Icons.favorite
-                    ),
-                color: Colors.white,
+
+                icon: const Icon(Icons.favorite),
+                color: pressAttention ? Colors.blue : Colors.red,
+
+                //color: Color.fromARGB(255, 230, 52, 52),
               ),
             ),
           ),
@@ -156,10 +158,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ),
             _details('Brand: ', widget.product.brand),
-            const SizedBox(
-              height: 15,
-            ),
-            _details('Quantity: ', widget.product.quantity),
             const SizedBox(
               height: 15,
             ),
