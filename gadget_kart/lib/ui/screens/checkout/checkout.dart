@@ -15,7 +15,6 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     var _theme = Theme.of(context).colorScheme;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       drawer: const DrawerWidget(),
       appBar: AppBar(
         title: const Text(

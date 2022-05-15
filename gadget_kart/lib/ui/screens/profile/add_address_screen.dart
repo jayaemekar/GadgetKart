@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../widgets/space_widget.dart';
@@ -6,7 +5,7 @@ import '../../widgets/space_widget.dart';
 import '../../../services/firebase/firestore_service.dart';
 
 class AddAddressScreen extends StatefulWidget {
-         static const id = 'AddAddressScreen';
+  static const id = 'AddAddressScreen';
 
   const AddAddressScreen({Key? key}) : super(key: key);
 
@@ -51,7 +50,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SpaceAndTitleWidget(
-                  title: '    Address 1',
+                  title: '    Address Line 1',
                 ),
                 TextFormField(
                   controller: _addressOneController,
@@ -66,7 +65,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                   ),
                 ),
                 SpaceAndTitleWidget(
-                  title: '    Address 2',
+                  title: '    Address Line 2',
                 ),
                 TextFormField(
                   controller: _addressTwoController,
@@ -108,7 +107,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                    hintText: 'ex : Damietta',
+                    hintText: 'ex : India',
                   ),
                 ),
                 SpaceAndTitleWidget(
@@ -123,7 +122,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                    hintText: 'ex : Mohamed',
+                    hintText: 'ex : Jayaa Emekar',
                   ),
                 ),
                 const SizedBox(
@@ -168,7 +167,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 14),
                               child: Text(
-                                'New Addres',
+                                'Save Address',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
